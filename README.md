@@ -9,13 +9,13 @@ If you need professional help for your Ceph cluster, try https://croit.io/ !
 
 ## List of Devices
 
-| ID                               | Type  |    IOPS |  #Jobs | Notes |
-|----------------------------------|-------|---------|--------|-------|
-| Samsung PM863a 240GB             | SSD   |   58876 |     10 | 1 job: 17983, then linear  |
-| LENSE20512GMSP34MEAT2TA 512GB    | SSD   |    3164 |      4 | 1 job: 1150, 2: 1588, 3: 2396, 5: 3008 |
-| Samsung PM961 128GB NVMe         | SSD   |    1480 |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |
-| Samsung MZVLB512HAJQ-000L7 NVMe  | SSD   |    1164 |     10 | 1 job: 384, 2: 771, 3: 603, 4: 715, 5: 786, 10: 1164 |
-| Samsung SSD 970 PRO 512GB NVMe   | SSD   |     840 |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
+| ID                             | Size  | Type  | Proto |    IOPS |  #Jobs | Notes |
+|--------------------------------|-------|-------|-------|---------|--------|-------|
+| Samsung PM863a                 | 240GB | SSD   | SATA  |   58876 |     10 | 1 job: 17983, then linear  |
+| LENSE20512GMSP34MEAT2TA        | 512GB | SSD   | NVMe  |    3164 |      4 | 1 job: 1150, 2: 1588, 3: 2396, 5: 3008 |
+| Samsung PM961                  | 128GB | SSD   | NVMe  |    1480 |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |
+| Samsung MZVLB512HAJQ-000L7     | 512GB | SSD   | NVMe  |    1164 |     10 | 1 job: 384, 2: 771, 3: 603, 4: 715, 5: 786, 10: 1164 |
+| Samsung SSD 970 PRO            | 512GB | SSD   | NVMe  |     840 |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
 
 
 For each device, the optimal number of jobs and resulting IO operations per second are determined.

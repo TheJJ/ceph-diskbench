@@ -11,6 +11,7 @@ If you need professional help for your Ceph cluster, try https://croit.io/ !
 
 | ID                             | Size  | Type  | Proto |    IOPS |  #Jobs | Notes |
 |--------------------------------|-------|-------|-------|---------|--------|-------|
+| Samsung MZQLW960HMJP-00003     | 960GB | SSD   | NVMe  |  268030 |     16 | on IBM Power9, 1 job: 34090, then linear up to ~8 jobs |
 | Samsung PM863a                 | 240GB | SSD   | SATA  |   58876 |     10 | 1 job: 17983, then linear  |
 | LENSE20512GMSP34MEAT2TA        | 512GB | SSD   | NVMe  |    3164 |      4 | 1 job: 1150, 2: 1588, 3: 2396, 5: 3008 |
 | Samsung PM961                  | 128GB | SSD   | NVMe  |    1480 |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |

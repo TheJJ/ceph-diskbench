@@ -2,7 +2,10 @@ Ceph Disk Benchmarks
 ====================
 
 In a reasonable [Ceph](https://ceph.com/) setup, block devices for a Ceph OSD are likely the one bottleneck you'll have.
-When you place the journal (block.wal) or the database (block.db) on a separate SSD, its performance and durability is particularly important.
+When you place the OSD journal (`block.wal`) or the database (`block.db`) on a SSD, its performance and durability is particularly important.
+
+"Normal" device benchmarks won't typically help you, as Ceph accesses the block devices *differently* than usual filesystems: it synchronizes every write and waits until the drive *confirms the write operation*.
+In particular this means that any write cache is always flushed directly. Other benchmarks usually do not consider this special drive access mode.
 
 If you need professional help for your Ceph cluster, try https://croit.io/ !
 
@@ -35,16 +38,31 @@ Get device model number:
 smartctl -a /dev/device
 ```
 
+#### Write cache
+
+As the Ceph journal is written with `O_SYNC` and `O_DIRECT`, each IO operation waits until the drive confirms that the data was written down permanently.
+Thus often the disk is *faster* when you **turn off** its write cache:
+
+```
+# see current status
+hdparm -W /dev/device
+
+# disable the write cache
+hdparm -W 0 /dev/device
+```
+
 #### [`fio`](https://fio.readthedocs.io/en/latest/index.html) Benchmark
 
 Beware, the device will be written to!
 
 You can create a new (LVM) partition when device is already in use and do the benchmark on it.
 
-To find the **jobcount** with highest IOPS score, try `numjob` values from 1 to 10:
+To find the **jobcount** with highest IOPS score, try `numjob` values from 1 to 16:
 
 ```
-fio --filename=/dev/device --direct=1 --sync=1 --iodepth=1 --runtime=60 --time_based --rw=write --bs=4k --numjobs=[JOBCOUNT] --group_reporting --name=ceph-journal-write-test
+for jobcount in `seq 16`; do
+    fio --filename=/dev/device --direct=1 --sync=1 --iodepth=1 --runtime=60 --time_based --rw=write --bs=4k --numjobs=$jobcount --group_reporting --name=ceph-journal-write-test
+done
 ```
 
 In the output, after the `ceph-journal-write-test` summary was printed, look for `write: IOPS=XXXXX`.

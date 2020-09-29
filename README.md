@@ -24,6 +24,10 @@ If you need professional help for your Ceph cluster, try https://croit.io/ !
 | Samsung PM961                  | 128GB | SSD   | NVMe  |    1480 |       - |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |
 | Samsung MZVLB512HAJQ-000L7     | 512GB | SSD   | NVMe  |    1164 |       - |     10 | 1 job: 384, 2: 771, 3: 603, 4: 715, 5: 786, 10: 1164 |
 | Samsung SSD 970 PRO            | 512GB | SSD   | NVMe  |     840 |       - |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
+| Intel SSD 750 PCIE            | 400GB | SSD   | NVMe  |     185440 |       - |      8 | 1 job: 24235, then linear until capped at 180k  |
+| Transcend SSD 220s            | 1TB | SSD   | NVMe  |     6260 |       - |      8 | 1 job: 14xx then linear untill capped at 61xx  |
+| Intel SSD 545            | 512GB | SSD   | SATA  |     6460 |       - |      8 | 1 job: 15xx then linear untill capped at 64xx  |
+| Samsung 983DCT            | 960GB | SSD   | NVMe  |     22570 |       - |      8 | 1 job: 4xxx then linear untill capped |
 
 
 For each device, the optimal number of jobs and resulting IO operations per second are determined.

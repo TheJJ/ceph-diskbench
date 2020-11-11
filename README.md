@@ -15,21 +15,23 @@ If you need professional help for your Ceph cluster, try https://croit.io/ !
 | ID                             | Size  | Type  | Proto |    IOPS | W-Cache |  #Jobs | Notes |
 |--------------------------------|------:|-------|-------|--------:|---------|-------:|-------|
 | Samsung MZQLW960HMJP-00003     | 960GB | SSD   | NVMe  |  268030 |       - |     16 | on IBM Power9, 1 job: 34090, then linear up to ~8 jobs |
+| Intel SSD 750 PCIE             | 400GB | SSD   | NVMe  |  192440 |       - |      8 | 1 job: 64235, then linear until capped at 190k  |
 | Samsung PM863a                 | 240GB | SSD   | SATA  |   58876 |     off |     10 | 1 job: 17983, then linear  |
+| Samsung 983DCT                 | 960GB | SSD   | NVMe  |   22570 |       - |      8 | 1 job: 4xxx then linear untill capped |
+| Intel SSD 545 - SATA           | 512GB | SSD   | SATA  |    6460 |       - |      8 | 1 job: 15xx then linear untill capped at 64xx  |
 | Samsung SSD 860 PRO            | 512GB | SSD   | SATA  |    5915 |       - |     15 | 1 IOPS=1033, 2 IOPS=1937, 3 IOPS=1889, 4 IOPS=2257, 5 IOPS=2477, 6 IOPS=2775, 7 IOPS=3218, 8 IOPS=3731, 9 IOPS=4196, 10 IOPS=4598, 11 IOPS=4879, 12 IOPS=5186, 13 IOPS=5410, 14 IOPS=5774, 15 IOPS=5915, 16 IOPS=5897 |
+
+| Transcend SSD 220s             | 1TB   | SSD   | NVMe  |    5760 |       - |      8 | 1 job: 14xx then linear untill capped at 57xx  |
 | Pliant LB206S MS04             | 200GB | SSD   | SAS   |    5028 |       - |      1 | 2 jobs: 2651, 2: 1277, 6: 1088, 7: 691, 8: 745, 9: 617, 10: 784 |
+| Sandisk Ultra II               | 960GB | SSD   | SATA  |    3640 |       - |      8 | 1 job: 600 then linear untill capped |
+| Sandisk Extreme Pro            | 960GB | SSD   | SATA  |    3400 |       - |      8 | 1 job: 840-890 then linear untill capped |
 | LENSE20512GMSP34MEAT2TA        | 512GB | SSD   | NVMe  |    3164 |       - |      4 | 1 job: 1150, 2: 1588, 3: 2396, 5: 3008 |
 | WD Blue WDS100T2B0A-00SM50     |   1TB | SSD   | SATA  |    2225 |     off |      2 | 1 job: 1751, 2: 2222, 3: 2225 |
 | Samsung SSD 860 EVO            |   1TB | SSD   | SATA  |    1728 |       - |     14 | 1 IOPS=490, 2 IOPS=868, 3 IOPS=603, 4 IOPS=734, 5 IOPS=758, 6 IOPS=928, 7 IOPS=1027 8 IOPS=959, 9 IOPS=1085 10 IOPS=1249 11 IOPS=1372 12 IOPS=1429 13 IOPS=1659 14 IOPS=1728 15 IOPS=1602 16 IOPS=1338  |
 | Samsung PM961                  | 128GB | SSD   | NVMe  |    1480 |       - |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |
 | Samsung MZVLB512HAJQ-000L7     | 512GB | SSD   | NVMe  |    1164 |       - |     10 | 1 job: 384, 2: 771, 3: 603, 4: 715, 5: 786, 10: 1164 |
 | Samsung SSD 970 PRO            | 512GB | SSD   | NVMe  |     840 |       - |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
-| Intel SSD 750 PCIE            | 400GB | SSD   | NVMe  |     192440 |       - |      8 | 1 job: 64235, then linear until capped at 190k  |
-| Transcend SSD 220s            | 1TB | SSD   | NVMe  |     5760 |       - |      8 | 1 job: 14xx then linear untill capped at 57xx  |
-| Intel SSD 545            | 512GB | SSD   | SATA  |     6460 |       - |      8 | 1 job: 15xx then linear untill capped at 64xx  |
-| Samsung 983DCT            | 960GB | SSD   | NVMe  |     22570 |       - |      8 | 1 job: 4xxx then linear untill capped |
-| Sandisk Extreme Pro            | 960GB | SSD   | SATA  |     3400 |       - |      8 | 1 job: 840-890 then linear untill capped |
-| Sandisk Ultra II            | 960GB | SSD   | SATA  |     3640 |       - |      8 | 1 job: 600 then linear untill capped |
+
 
 
 For each device, the optimal number of jobs and resulting IO operations per second are determined.

@@ -28,7 +28,7 @@ In particular this means that any write cache is always flushed directly. Other 
 | Samsung PM961                  | 128GB | SSD   | NVMe  |    1480 |       - |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |
 | Samsung MZVLB512HAJQ-000L7     | 512GB | SSD   | NVMe  |    1164 |       - |     10 | 1 job: 384, 2: 771, 3: 603, 4: 715, 5: 786, 10: 1164 |
 | Samsung SSD 970 PRO            | 512GB | SSD   | NVMe  |     840 |       - |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
-
+| Intel SSD S4510                | 480GB | SSD   | SATA  |   48409 |     off |     15 | 1 job: 16xx, 2:28xx, 3:33xx, 6: 42xx, 8-16:46xx-48xx |
 
 For each device, the optimal number of jobs and resulting IO operations per second are determined.
 

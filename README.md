@@ -30,6 +30,7 @@ In particular this means that any write cache is always flushed directly. Other 
 | Samsung SSD 970 PRO            | 512GB | SSD   | NVMe  |     840 |       - |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
 | Intel SSD S4510                | 480GB | SSD   | SATA  |   48409 |     off |     15 | 1 job: 16xx, 2:28xx, 3:33xx, 6: 42xx, 8-16:46xx-48xx |
 | Samsung PM1643a                | 960GB | SSD   | SAS   |   93229 |       - |     16 | 1 job: 18545, 2: 33015, 3: 48855, 4: 60137, 5: 66992, 6: 76381, 7: 83164, 13: 90436, 16: 93229 |
+
 For each device, the optimal number of jobs and resulting IO operations per second are determined.
 
 The more IOPS in sync mode can be done, the more transactions Ceph can process on the OSD.

@@ -14,7 +14,9 @@ In particular this means that any write cache is always flushed directly. Other 
 |--------------------------------|------:|-------|-------|--------:|---------|-------:|-------|
 | Samsung MZQLW960HMJP-00003     | 960GB | SSD   | NVMe  |  268030 |       - |     16 | on IBM Power9, 1 job: 34090, then linear up to ~8 jobs |
 | Intel SSD 750 PCIE             | 400GB | SSD   | NVMe  |  192440 |       - |      8 | 1 job: 64235, then linear until capped at 190k  |
+| Samsung PM1643a                | 960GB | SSD   | SAS   |   93229 |       - |     16 | 1 job: 18545, 2: 33015, 3: 48855, 4: 60137, 5: 66992, 6: 76381, 7: 83164, 13: 90436, 16: 93229 |
 | Samsung PM863a                 | 240GB | SSD   | SATA  |   58876 |     off |     10 | 1 job: 17983, then linear  |
+| Intel SSD S4510                | 480GB | SSD   | SATA  |   48409 |     off |     15 | 1 job: 16xx, 2:28xx, 3:33xx, 6: 42xx, 8-16:46xx-48xx |
 | Samsung 983DCT                 | 960GB | SSD   | NVMe  |   22570 |       - |      8 | 1 job: 4xxx then linear untill capped |
 | Intel SSD 545 - SATA           | 512GB | SSD   | SATA  |    6460 |       - |      8 | 1 job: 15xx then linear untill capped at 64xx  |
 | Samsung SSD 860 PRO            | 512GB | SSD   | SATA  |    5915 |       - |     15 | 1 IOPS=1033, linear to 15 IOPS=5915, 16 IOPS=5897 |
@@ -28,8 +30,6 @@ In particular this means that any write cache is always flushed directly. Other 
 | Samsung PM961                  | 128GB | SSD   | NVMe  |    1480 |       - |      1 | 2 jobs: 818, 3: 1092, 4: 525, 5: 569 |
 | Samsung MZVLB512HAJQ-000L7     | 512GB | SSD   | NVMe  |    1164 |       - |     10 | 1 job: 384, 2: 771, 3: 603, 4: 715, 5: 786, 10: 1164 |
 | Samsung SSD 970 PRO            | 512GB | SSD   | NVMe  |     840 |       - |      2 | 1 job: 456, 3: 817, 4: 782, 5: 785  |
-| Intel SSD S4510                | 480GB | SSD   | SATA  |   48409 |     off |     15 | 1 job: 16xx, 2:28xx, 3:33xx, 6: 42xx, 8-16:46xx-48xx |
-| Samsung PM1643a                | 960GB | SSD   | SAS   |   93229 |       - |     16 | 1 job: 18545, 2: 33015, 3: 48855, 4: 60137, 5: 66992, 6: 76381, 7: 83164, 13: 90436, 16: 93229 |
 
 For each device, the optimal number of jobs and resulting IO operations per second are determined.
 

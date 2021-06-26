@@ -15,6 +15,7 @@ In particular this means that any write cache is always flushed directly. Other 
 | Samsung MZQLW960HMJP-00003     | 960GB | SSD   | NVMe  |  268030 |       - |     16 | on IBM Power9, 1 job: 34090, then linear up to ~8 jobs |
 | Intel SSD 750 PCIE             | 400GB | SSD   | NVMe  |  192440 |       - |      8 | 1 job: 64235, then linear until capped at 190k  |
 | Samsung PM1643a                | 960GB | SSD   | SAS   |   93229 |       - |     16 | 1 job: 18545, 2: 33015, 3: 48855, 4: 60137, 5: 66992, 6: 76381, 7: 83164, 13: 90436, 16: 93229 |
+| Samsung PM883                  | 7.68TB| SSD   | SATA  |   59338 |     off |     16 | 1 job: 12680, capped at ~60k; cache on: 5094 @ 1job, 27521 @16 |
 | Samsung PM863a                 | 240GB | SSD   | SATA  |   58876 |     off |     10 | 1 job: 17983, then linear  |
 | Intel SSD S4510                | 480GB | SSD   | SATA  |   48409 |     off |     15 | 1 job: 16xx, 2:28xx, 3:33xx, 6: 42xx, 8-16:46xx-48xx |
 | Samsung 983DCT                 | 960GB | SSD   | NVMe  |   22570 |       - |      8 | 1 job: 4xxx then linear untill capped |

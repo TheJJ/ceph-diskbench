@@ -79,10 +79,10 @@ hdparm -W 0 /dev/device
 
 Beware, the device will be written to and existing OSD data **will be corrupted**!
 
-Each OSD with [Bluestore](https://docs.ceph.com/en/latest/rados/configuration/storage-devices/#bluestore) has one `bstore_kv_sync` thread, which invokes `fdatasync` after each transaction. This is what we try to benchmark.
+Each OSD with [Bluestore](https://docs.ceph.com/en/latest/rados/configuration/storage-devices/#bluestore) has one `bstore_kv_sync` thread, which writes with `pwritev` and invokes `fdatasync` after each transaction. This is what we try to benchmark.
 
 ```
-fio --filename /dev/device --direct=1 --fdatasync=1 --iodepth=1 --runtime=20 --time_based --rw=write --bs=4k --group_reporting --name=ceph-iops --numjobs=1
+fio --filename /dev/device --numjobs=1 --direct=1 --fdatasync=1 --ioengine=pvsync --iodepth=1 --runtime=20 --time_based --rw=write --bs=4k --group_reporting --name=ceph-iops
 ```
 
 In the output, after the `ceph-iops` summary was printed, look for `write: IOPS=XXXXX`.

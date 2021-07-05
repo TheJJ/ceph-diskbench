@@ -40,11 +40,11 @@ In this list CPU/RAM/... are ignored since we assume the device is much slower t
 | Transcend SSD 220s             |     1TB | NVMe       |      1420 |     5760 |          8 |     - | asymptotic |
 | LENSE20512GMSP34MEAT2TA        |   512GB | NVMe       |      1150 |     3164 |          4 |     - | asymptotic |
 | Samsung SSD 860 PRO            |   512GB | SATA       |      1033 |     5915 |         15 |     - | asymptotic |
-| Sandisk Extreme Pro            |   960GB | SATA       |       860 |     3400 |          8 |     - | linear until capped |
-| Sandisk Ultra II               |   960GB | SATA       |       600 |     3640 |          8 |     - | linear until capped |
-| Samsung SSD 860 EVO            |     1TB | SATA       |       490 |     1728 |         14 |     - | linear until capped |
+| Sandisk Extreme Pro            |   960GB | SATA       |       860 |     3400 |          8 |     - | asymptotic |
+| Sandisk Ultra II               |   960GB | SATA       |       600 |     3640 |          8 |     - | asymptotic |
+| Samsung SSD 860 EVO            |     1TB | SATA       |       490 |     1728 |         14 |     - | asymptotic |
 | Samsung SSD 970 PRO            |   512GB | NVMe       |       456 |      840 |          2 |     - | 2 jobs already saturate |
-| Samsung MZVLB512HAJQ-000L7     |   512GB | NVMe       |       384 |     1164 |         10 |     - | linear until capped |
+| Samsung MZVLB512HAJQ-000L7     |   512GB | NVMe       |       384 |     1164 |         10 |     - | asymptotic |
 
 Entries are sorted by 1-job IOPS.
 

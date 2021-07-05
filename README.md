@@ -16,15 +16,18 @@ Sorted by IOPS - since they're relevant for Ceph. max (but max IOPS are too
 * max IOPS: sum of parallel write-sync operations for *multiple jobs*
 * cache: write cache activation status (`hdparm -W`)
 
-The more IOPS in sync mode can be done, the more transactions Ceph can commit on a [Bluestore](https://docs.ceph.com/en/latest/rados/configuration/storage-devices/#bluestore) OSD in the `bstore_kv_sync` thread, which is usually the bottleneck.
-Since reads/writes to the pool data happens in other threads, 8 jobs (`osd_op_num_shards_ssd`) should get IOPS than 1 job!
+The more **1-job IOPS** in sync mode can be done, the more transactions can be commited on a [Bluestore](https://docs.ceph.com/en/latest/rados/configuration/storage-devices/#bluestore) OSD with its `bstore_kv_sync` thread, which is usually the bottleneck (it calls `fdatasync` on the block device).
 
-In this list CPU/RAM/... are ignored since we assume the device is much slower than the server.
+Additionally to the metadata `kv_sync`, writes with pool data happen in other threads: The number of shards (`osd_op_num_shards_ssd` = 8 by default on SSD) determines the number of additional IO jobs needed.
+In the benchmark, the `peak #jobs` should therefore be at least 8.
+
+In this list we ignore CPU/RAM/... of the host since we assume the storage device is much slower than the server.
+If you get different results, please open an issue so we can either update the benchmark or figure out what went wrong.
 
 
 ### SSDs
 
-| ID                             |    Size | Proto      | 1job IOPS | max IOPS | peak #Jobs | cache | Notes   |
+| ID                             |    Size | Proto      | 1job IOPS | max IOPS | peak #jobs | cache | Notes   |
 |--------------------------------|--------:|------------|----------:|---------:|-----------:|-------|---------|
 | Intel SSD 750 PCIe             |   400GB | NVMe       |     64235 |   192440 |          8 |     - | asymptotic |
 | Samsung MZQLW960HMJP-00003     |   960GB | NVMe       |     34090 |   268030 |         16 |     - | linear up to ~8 jobs, then asymptotic |
